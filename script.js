@@ -15,8 +15,7 @@ function add_text(){
     rita_artiklar(); 
 }
 
-function rita_artiklar()
-{
+function rita_artiklar(){
     main.innerHTML="";
     for (let i = 0; i < array.length; i++) {
         let art = document.createElement("article");
@@ -34,4 +33,12 @@ function read_from_ls(){
     let json = window.localStorage.getItem("nyckel");
     array = JSON.parse("json");
     console.log("get_local:\n",array);
+}
+
+function toggle_mode(){
+    let articles = document.querySelectorAll("article");
+    document.body.classList.toggle("dark");
+    for (let index = 0; index < articles.length; index++) {
+        articles[index].classList.toggle("dark");
+    }
 }
